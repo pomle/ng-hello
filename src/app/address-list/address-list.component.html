@@ -7,24 +7,26 @@
     </tr>
   </thead>
 
-  <thead class="section">
-    <tr>
-      <th colSpan="3">Awaiting</th>
-    </tr>
-  </thead>
+  <ng-container *ngIf="getAwaited().size">
+    <thead class="section">
+      <tr>
+        <th colSpan="3">Awaiting</th>
+      </tr>
+    </thead>
 
-  <tbody>
-    <tr *ngFor="let address of whitelist.addresses">
-      <td class="toggle">
-        <button
-          (click)="whitelist.remove(address)">
-          Remove
-        </button>
-      </td>
-      <td class="address">{{address}}</td>
-      <td class="balance">-</td>
-    </tr>
-  </tbody>
+    <tbody>
+      <tr *ngFor="let address of getAwaited()">
+        <td class="toggle">
+          <button
+            (click)="whitelist.remove(address)">
+            Remove
+          </button>
+        </td>
+        <td class="address">{{address}}</td>
+        <td class="balance">-</td>
+      </tr>
+    </tbody>
+  </ng-container>
 
   <thead class="section">
     <tr>
