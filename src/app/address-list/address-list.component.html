@@ -1,3 +1,28 @@
+<div class="sort">
+  Sort:
+
+  <button (click)="sort('default')"
+    [class.toggled]="flag === 'default'">
+    Default
+  </button>
+
+  <button (click)="sort('address')"
+    [class.toggled]="flag === 'address'">
+    Address
+  </button>
+
+  <button (click)="sort('balance')"
+    [class.toggled]="flag === 'balance'">
+    Balance
+  </button>
+
+  <button *ngIf="hasWhitelist()"
+    (click)="sort('whitelist-first')"
+    [class.toggled]="flag === 'whitelist-first'">
+    Whitelist First
+  </button>
+</div>
+
 <table class="adress-list">
   <thead>
     <tr>
@@ -35,7 +60,7 @@
   </thead>
 
   <tbody>
-    <tr *ngFor="let entry of entries"
+    <tr *ngFor="let entry of getEntries()"
       [class.whitelisted]="whitelist.has(entry.address)"
       [class.blacklisted]="whitelist.size && !whitelist.has(entry.address)">
       <td className="toggle">

@@ -8,6 +8,8 @@ import { Entry } from '../entry';
   styleUrls: ['./address-list.component.css']
 })
 export class AddressListComponent implements OnInit {
+  flag: String = 'default';
+
   @Input() entries: Entry[];
 
   constructor(private whitelist: WhitelistService) {
@@ -21,7 +23,32 @@ export class AddressListComponent implements OnInit {
     return pending;
   }
 
+  getEntries() {
+    const sorted = [...this.entries];
+
+    if (this.flag === 'address') {
+      return sorted.sort((a, b) => a.address > b.address ? 1 : -1);
+    } else if (this.flag === 'balance') {
+      return sorted.sort((a, b) => a.balance > b.balance ? 1 : -1);
+    } else if (this.flag === 'whitelist-first') {
+      if (this.whitelist.size === 0) {
+        this.flag = 'default';
+        return sorted;
+      }
+      return sorted.sort(a => this.whitelist.has(a.address) ? -1 : 1);
+    }
+
+    return sorted;
+  }
+
+  hasWhitelist() {
+    return this.whitelist.addresses.size > 0;
+  }
+
+  sort(flag: String) {
+    this.flag = flag;
+  }
+
   ngOnInit() {
-    this.whitelist.add('0x47c62777fa377e52b275832c01297433a26f83b0');
   }
 }
