@@ -1,27 +1,17 @@
-# PrimablockCh
+# NG Hello
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.3.
+Before starting I spent about 2 days thinking about the assignment. I decided to make the white listing feature a core intergration in my solution.
 
-## Development server
+With this approach there is no special whitelist exposed to the user, instead the UI allows the user to add an address, or toggle an existing. If any address have been toggled (whitelisted) it will display whitelisted addresses in green, and non-whitelisted in grey with their balance striked.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+In the case where an address is whitelisted but have no entry, it will be displayed as pending and the user is able to cancel.
 
-## Code scaffolding
+If any whitelist entry exists, the user is able to sort whitelisted first.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Since I have not used Angular before and am fluent in React I prototyped the solution in React and spent around 2 hours. I then ported this solution into Angular and spent around 4 additional hours.
 
-## Build
+## Run
+```bash
+ng serve --open
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
