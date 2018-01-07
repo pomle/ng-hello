@@ -13,12 +13,12 @@ export class AddressListComponent implements OnInit {
   constructor(private whitelist: WhitelistService) {
   }
 
-  getAwaited() {
-    const awaited = new Set(this.whitelist.addresses);
+  getPending() {
+    const pending = new Set(this.whitelist.addresses);
     for (const entry of this.entries) {
-      awaited.delete(entry.address);
+      pending.delete(entry.address);
     }
-    return awaited;
+    return pending;
   }
 
   ngOnInit() {

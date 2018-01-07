@@ -7,15 +7,15 @@
     </tr>
   </thead>
 
-  <ng-container *ngIf="getAwaited().size">
+  <ng-container *ngIf="getPending().size">
     <thead class="section">
       <tr>
-        <th colSpan="3">Awaiting</th>
+        <th colSpan="3">Pending</th>
       </tr>
     </thead>
 
     <tbody>
-      <tr *ngFor="let address of getAwaited()">
+      <tr *ngFor="let address of getPending()">
         <td class="toggle">
           <button
             (click)="whitelist.remove(address)">
