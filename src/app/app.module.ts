@@ -5,6 +5,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AddressListComponent } from './address-list/address-list.component';
 
+import { WhitelistService } from './whitelist.service';
+
 
 @NgModule({
   declarations: [
@@ -14,7 +16,7 @@ import { AddressListComponent } from './address-list/address-list.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [WhitelistService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

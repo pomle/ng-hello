@@ -1,7 +1,24 @@
+.section tr {
+    background: #000;
+    color: #fff;
+}
+
 .address {
     letter-spacing: 0.05em;
 }
 
 .balance {
     text-align: right;
+}
+
+.whitelisted .address {
+    color: #00ff74;
+}
+
+.blacklisted .address {
+    color: #ddd;
+}
+
+.blacklisted .balance {
+    text-decoration: line-through;
 }

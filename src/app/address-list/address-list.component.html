@@ -7,30 +7,45 @@
     </tr>
   </thead>
 
-
-  <thead className="section">
+  <thead class="section">
     <tr>
       <th colSpan="3">Awaiting</th>
     </tr>
   </thead>
 
   <tbody>
-    <tr *ngFor="let entry of entries">
-      <td className="toggle"></td>
-      <td class="address">{{entry.address}}</td>
+    <tr *ngFor="let address of whitelist.addresses">
+      <td class="toggle">
+        <button
+          (click)="whitelist.remove(address)">
+          Remove
+        </button>
+      </td>
+      <td class="address">{{address}}</td>
       <td class="balance">-</td>
     </tr>
   </tbody>
 
-  <thead className="section">
+  <thead class="section">
     <tr>
       <th colSpan="3">Contributors</th>
     </tr>
   </thead>
 
   <tbody>
-    <tr *ngFor="let entry of entries">
-      <td className="toggle"></td>
+    <tr *ngFor="let entry of entries"
+      [class.whitelisted]="whitelist.has(entry.address)"
+      [class.blacklisted]="whitelist.size && !whitelist.has(entry.address)">
+      <td className="toggle">
+        <button *ngIf="whitelist.has(entry.address)"
+          (click)="whitelist.remove(entry.address)">
+          Remove
+        </button>
+        <button *ngIf="!whitelist.has(entry.address)"
+          (click)="whitelist.add(entry.address)">
+          Add
+        </button>
+      </td>
       <td class="address">{{entry.address}}</td>
       <td class="balance">{{entry.balance | number}}</td>
     </tr>

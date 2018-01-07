@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { WhitelistService } from '../whitelist.service';
 import { Entry } from '../entry';
 
 @Component({
@@ -7,11 +8,12 @@ import { Entry } from '../entry';
   styleUrls: ['./address-list.component.css']
 })
 export class AddressListComponent implements OnInit {
-  @Input() entries: Array<Entry>;
+  @Input() entries: Entry[];
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private whitelist: WhitelistService) {
   }
 
+  ngOnInit() {
+    this.whitelist.add('0x47c62777fa377e52b275832c01297433a26f83b0');
+  }
 }
