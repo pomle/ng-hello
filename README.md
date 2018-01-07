@@ -12,6 +12,9 @@ Since I have not used Angular before and am fluent in React I prototyped the sol
 
 ## Run
 ```bash
+git clone git@github.com:pomle/ng-hello.git
+cd ng-hello
+npm install
 ng serve --open
 ```
 
