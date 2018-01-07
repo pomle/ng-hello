@@ -1,13 +1,5 @@
-.entry {
-    display: flex;
-}
-
-.entry > * {
-    flex: 0 1 auto;
-}
-
 .address {
-    font-family: monospace;
+    letter-spacing: 0.05em;
 }
 
 .balance {

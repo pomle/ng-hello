@@ -1,13 +1,38 @@
 <table class="adress-list">
   <thead>
     <tr>
-      <th>Address</th><th>Balance</th>
+      <th>Whitelist</th>
+      <th>Address</th>
+      <th>Balance</th>
     </tr>
   </thead>
+
+
+  <thead className="section">
+    <tr>
+      <th colSpan="3">Awaiting</th>
+    </tr>
+  </thead>
+
   <tbody>
     <tr *ngFor="let entry of entries">
+      <td className="toggle"></td>
       <td class="address">{{entry.address}}</td>
-      <td class="balance">{{entry.balance | currency }} ETH</td>
+      <td class="balance">-</td>
+    </tr>
+  </tbody>
+
+  <thead className="section">
+    <tr>
+      <th colSpan="3">Contributors</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let entry of entries">
+      <td className="toggle"></td>
+      <td class="address">{{entry.address}}</td>
+      <td class="balance">{{entry.balance | number}}</td>
     </tr>
   </tbody>
 </table>
