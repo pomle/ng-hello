@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { Entry } from './entry';
 import { ENTRIES } from '../fixtures/entries';
 
 @Component({
@@ -9,5 +9,11 @@ import { ENTRIES } from '../fixtures/entries';
 })
 export class AppComponent {
   title = 'PrimaBlock';
-  entries = ENTRIES;
+
+  entries: Entry[]
+
+  constructor() {
+    this.entries = ENTRIES;
+    console.log(this.entries);
+  }
 }

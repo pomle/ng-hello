@@ -1,4 +1,6 @@
-export const ENTRIES = [
+import { Entry } from '../app/entry';
+
+export const ENTRIES: Entry[] = [
 	{
 		"address": "0x47c62777fa377e52b275832c01297433a26f83b0",
 		"balance": 1.00

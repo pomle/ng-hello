@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Entry } from '../entry';
 
 @Component({
   selector: 'app-address-list',
@@ -6,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./address-list.component.css']
 })
 export class AddressListComponent implements OnInit {
-  @Input() entries: Array<Object>;
+  @Input() entries: Array<Entry>;
 
   constructor() { }
 
