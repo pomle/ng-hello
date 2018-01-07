@@ -29,7 +29,7 @@ export class AddressListComponent implements OnInit {
     if (this.flag === 'address') {
       return sorted.sort((a, b) => a.address > b.address ? 1 : -1);
     } else if (this.flag === 'balance') {
-      return sorted.sort((a, b) => a.balance > b.balance ? 1 : -1);
+      return sorted.sort((a, b) => a.balance > b.balance ? -1 : 1);
     } else if (this.flag === 'whitelist-first') {
       if (this.whitelist.size === 0) {
         this.flag = 'default';
