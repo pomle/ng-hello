@@ -1,0 +1,8 @@
+<div class="interface">
+    <input [(ngModel)]="address" type="text" placeholder="Address"/>
+    <button
+      [disabled]="!isValid(address)"
+      (click)="add()">
+        Add
+    </button>
+</div>

@@ -39,15 +39,15 @@
       <td className="toggle">
         <button *ngIf="whitelist.has(entry.address)"
           (click)="whitelist.remove(entry.address)">
-          Remove
+          Untoggle
         </button>
         <button *ngIf="!whitelist.has(entry.address)"
           (click)="whitelist.add(entry.address)">
-          Add
+          Toggle
         </button>
       </td>
       <td class="address">{{entry.address}}</td>
-      <td class="balance">{{entry.balance | number}}</td>
+      <td class="balance">{{entry.balance | number:'0.2'}}</td>
     </tr>
   </tbody>
 </table>

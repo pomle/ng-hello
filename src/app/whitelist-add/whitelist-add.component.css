@@ -1,0 +1,13 @@
+.interface {
+    display: flex;
+    align-items: center;
+    margin: 3em;
+}
+
+.interface input {
+    border: 1px solid #777;
+    border-radius: 1em;
+    font-size: 1em;
+    padding: 0.2em 2em;
+    width: 24em;
+}

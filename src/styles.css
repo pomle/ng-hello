@@ -22,6 +22,7 @@ button.toggled {
     color: #fff;
 }
 
-td {
+th, td {
     padding: 0.3em 0.8em;
+    text-align: left;
 }
