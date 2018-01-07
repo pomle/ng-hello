@@ -2,9 +2,5 @@
 <div>
 
 </div>
-<ul class="addresses">
-  <li *ngFor="let entry of entries">
-    <div class="address">{{entry.address}}</div>
-    <div class="balance">{{entry.balance}}</div>
-  </li>
-</ul>
+
+<app-address-list [entries]="entries"></app-address-list>

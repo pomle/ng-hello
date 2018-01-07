@@ -1,0 +1,15 @@
+.entry {
+    display: flex;
+}
+
+.entry > * {
+    flex: 0 1 auto;
+}
+
+.address {
+    font-family: monospace;
+}
+
+.balance {
+    text-align: right;
+}

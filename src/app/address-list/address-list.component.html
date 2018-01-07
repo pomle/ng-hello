@@ -1,0 +1,13 @@
+<table class="adress-list">
+  <thead>
+    <tr>
+      <th>Address</th><th>Balance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let entry of entries">
+      <td class="address">{{entry.address}}</td>
+      <td class="balance">{{entry.balance | currency }} ETH</td>
+    </tr>
+  </tbody>
+</table>
